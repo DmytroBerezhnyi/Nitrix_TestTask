@@ -14,9 +14,9 @@ import com.example.dmytroberezhnyi_nitrix_testtask.presentation.base.model.Navig
 import com.example.dmytroberezhnyi_nitrix_testtask.presentation.base.model.SnackbarModel
 import com.google.android.material.snackbar.Snackbar
 
-abstract class BaseFragment<D : ViewDataBinding> : Fragment() {
+abstract class BaseFragment<D : ViewDataBinding, VM: BaseViewModel> : Fragment() {
 
-    abstract val vm: BaseViewModel
+    abstract val vm: VM
 
     protected lateinit var viewDataBinding: D
 
@@ -83,10 +83,10 @@ abstract class BaseFragment<D : ViewDataBinding> : Fragment() {
     }
 
     protected fun showProgressLoading() {
-        (activity as? BaseActivity<*>)?.showProgressLoading()
+        (activity as? BaseActivity<*, *>)?.showProgressLoading()
     }
 
     protected fun hideProgressLoading() {
-        (activity as? BaseActivity<*>)?.hideProgressLoading()
+        (activity as? BaseActivity<*, *>)?.hideProgressLoading()
     }
 }

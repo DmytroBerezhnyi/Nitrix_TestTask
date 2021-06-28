@@ -9,15 +9,27 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModelProvider
 import com.example.dmytroberezhnyi_nitrix_testtask.R
+import com.example.dmytroberezhnyi_nitrix_testtask.presentation.App
 
-abstract class BaseActivity<D : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseActivity<D : ViewDataBinding, ViewModelType : BaseViewModel>(val clazz: Class<ViewModelType>) :
+    AppCompatActivity() {
+
     lateinit var viewDataBinding: D
+
+    protected lateinit var vm: ViewModelType
 
     @get:LayoutRes
     abstract val layoutId: Int
 
     private var mProgressDialog: AlertDialog? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewDataBinding = DataBindingUtil.setContentView(this, layoutId)
+        vm = ViewModelProvider(this, (applicationContext as App).viewModelFactory)[clazz]
+    }
 
     fun showProgressLoading() {
         mProgressDialog = buildProgressDialog()
@@ -30,12 +42,6 @@ abstract class BaseActivity<D : ViewDataBinding> : AppCompatActivity() {
 
     fun hideProgressLoading() {
         mProgressDialog?.dismiss()
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewDataBinding = DataBindingUtil.setContentView(this, layoutId)
-        viewDataBinding.lifecycleOwner = this
     }
 
     private fun buildProgressDialog(): AlertDialog {
