@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashScreen_to_FeedVideoScreen"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+            app:destination="@id/FeedVideoScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/FeedVideoScreen"
+        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.main.FeedVideoFragment"
+        tools:layout="@layout/fragment_feed_video" >
+        <action
+            android:id="@+id/action_FeedVideoScreen_to_videoPlayerScreen"
+            app:destination="@id/videoPlayerScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerScreen"
+        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.view_video.VideoPlayerFragment"
+        tools:layout="@layout/fragment_video_player"/>
+</navigation>
