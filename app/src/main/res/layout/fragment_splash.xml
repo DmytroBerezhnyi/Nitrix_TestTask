@@ -10,6 +10,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_splash"
+            setImageFromDrawableResourcesId="@{@drawable/iv_youtube_play}"
             android:layout_width="150dp"
             android:layout_height="100dp"
             app:layout_constraintBottom_toBottomOf="parent"

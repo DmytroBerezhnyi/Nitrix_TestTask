@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dmytroberezhnyi_nitrix_testtask.di.ViewModelFactory
 import com.example.dmytroberezhnyi_nitrix_testtask.di.ViewModelKey
 import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.activity.MainVM
-import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.main.FeedVideoVM
+import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.feed_video.FeedVideoVM
 import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.splash.SplashVM
-import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.view_video.ViewPlayerVM
+import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.video_player.ViewPlayerVM
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

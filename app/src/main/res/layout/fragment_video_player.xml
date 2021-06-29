@@ -5,7 +5,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.fragment.main.FeedVideoFragment">
+        tools:context=".presentation.ui.fragment.feed_video.FeedVideoFragment">
 
         <TextView
             android:layout_width="match_parent"

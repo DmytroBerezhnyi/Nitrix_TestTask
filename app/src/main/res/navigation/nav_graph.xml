@@ -13,11 +13,11 @@
             android:id="@+id/action_splashScreen_to_FeedVideoScreen"
             app:popUpToInclusive="true"
             app:popUpTo="@id/nav_graph"
-            app:destination="@id/FeedVideoScreen" />
+            app:destination="@id/feedVideoScreen" />
     </fragment>
     <fragment
-        android:id="@+id/FeedVideoScreen"
-        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.main.FeedVideoFragment"
+        android:id="@+id/feedVideoScreen"
+        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.feed_video.FeedVideoFragment"
         tools:layout="@layout/fragment_feed_video" >
         <action
             android:id="@+id/action_FeedVideoScreen_to_videoPlayerScreen"
@@ -25,6 +25,6 @@
     </fragment>
     <fragment
         android:id="@+id/videoPlayerScreen"
-        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.view_video.VideoPlayerFragment"
+        android:name="com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.video_player.VideoPlayerFragment"
         tools:layout="@layout/fragment_video_player"/>
 </navigation>

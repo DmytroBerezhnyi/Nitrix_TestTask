@@ -16,26 +16,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainVM>(MainVM::class.jav
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //inject()
         setupNavigation()
-        //setupViewObservers()
     }
 
     private fun setupNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
-
-    /*private fun inject() {
-        val daggerComponent = DaggerMyComponent.create()
-        daggerComponent.inject(this)
-    }
-
-    private fun setupViewObservers() {
-        vm.videoResponse.observe(this, {
-            Toast.makeText(this, it.items.size.toString(), Toast.LENGTH_LONG).show()
-        })
-        vm.showProgressLoadingEvent.notifyLiveData()
-        vm.getVideos()
-    }*/
 }

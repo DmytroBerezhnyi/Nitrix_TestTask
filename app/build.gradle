@@ -19,11 +19,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildFeatures {
-        dataBinding = true
-        viewBinding = true
+    dataBinding {
+        enabled = true
     }
 
+    viewBinding {
+        enabled = true
+    }
+    
     buildTypes {
         release {
             minifyEnabled false

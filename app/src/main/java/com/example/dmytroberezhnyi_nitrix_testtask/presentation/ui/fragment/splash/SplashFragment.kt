@@ -19,7 +19,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashVM>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Glide.with(this).load(R.drawable.youtube_play).into(viewDataBinding.ivSplash)
+        //Glide.with(this).load(R.drawable.youtube_play).into(viewDataBinding.ivSplash)
         setupViewObservers()
     }
 
