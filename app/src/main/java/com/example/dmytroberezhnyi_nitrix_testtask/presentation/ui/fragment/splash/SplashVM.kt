@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class SplashVM @Inject constructor(): BaseViewModel() {
 
-    val showFeedVideoEvent = liveData<Boolean> {
+    val showFeedVideoEvent = liveData {
         delay(2500)
         emit(true)
     }

@@ -3,5 +3,4 @@ package com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.fragment.vid
 import com.example.dmytroberezhnyi_nitrix_testtask.presentation.base.architecture.BaseViewModel
 import javax.inject.Inject
 
-class ViewPlayerVM @Inject constructor(): BaseViewModel() {
-}
+class ViewPlayerVM @Inject constructor(): BaseViewModel()

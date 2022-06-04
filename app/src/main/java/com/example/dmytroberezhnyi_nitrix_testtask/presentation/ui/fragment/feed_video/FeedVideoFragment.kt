@@ -10,11 +10,9 @@ import com.example.dmytroberezhnyi_nitrix_testtask.presentation.ui.adapter.FeedV
 
 class FeedVideoFragment : BaseFragment<FragmentFeedVideoBinding, FeedVideoVM>() {
 
-    override val layoutId: Int
-        get() = R.layout.fragment_feed_video
+    override val layoutId: Int = R.layout.fragment_feed_video
 
-    override val vm: FeedVideoVM
-        get() = createViewModel(FeedVideoVM::class.java)
+    override val vm: FeedVideoVM = createViewModel(FeedVideoVM::class.java)
 
     private val feedVideoAdapter by lazy {
         FeedVideoAdapter(
@@ -36,8 +34,8 @@ class FeedVideoFragment : BaseFragment<FragmentFeedVideoBinding, FeedVideoVM>() 
     }
 
     private fun setupViewObservers() {
-        vm.youtubeVideoUiModelList.observe(viewLifecycleOwner, {
+        vm.youtubeVideoUiModelList.observe(viewLifecycleOwner) {
             feedVideoAdapter.submitList(it)
-        })
+        }
     }
 }
